@@ -1,0 +1,27 @@
+<div class="min-h-screen w-screen pt-3 flex" style="background-color: #f5f5f5">
+  <div
+    class="grid grid-cols-12 grid-rows-6 row-span-full col-span-full flex-grow"
+  >
+    <!-- Nav Container -->
+    <div class="container grid row-span-full col-span-2 bg-transparent">
+      <nav class="col-span-full flex justify-center">
+        <ul class="flex flex-col align-middle justify-center">
+          <li *ngFor="let navItem of navItems" class="my-4">
+            <a
+              routerLink="{{ navItem.link }}"
+              class="font-bold text-xl"
+              style="color: #a0a0a0"
+              >{{ navItem.title }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Content Container -->
+    <div class="container grid row-span-6 col-span-10 bg-transparent ps-6">
+      <router-outlet></router-outlet>
+    </div>
+    <!--  -->
+  </div>
+</div>
