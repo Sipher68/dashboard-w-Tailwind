@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomepageComponent } from './homepage.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { TransportOperatorsComponent } from '../transport-operators/transport-operators.component';
+import { ActionCenterComponent } from '../action-center/action-center.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'transport-operators',
         component: TransportOperatorsComponent,
+      },
+      {
+        path: 'action-center',
+        component: ActionCenterComponent,
       },
     ],
   },

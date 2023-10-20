@@ -1,0 +1,29 @@
+<div class="container bg-white h-max rounded-t-xl">
+  <div class="container mt-3 p-6">
+    <div class="container mb-4 border-b-2 border-cyan-500">
+      <div class="grid grid-rows-2">
+        <div class="row-span-6 flex justify-end mb-2">
+          <div>Filter</div>
+        </div>
+        <div class="row-span-6 flex justify-start mb-2">
+          <div>Bulletin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Body -->
+  <div class="container overflow-y-auto" style="height: 620px">
+    <div class="container border-b-2" *ngFor="let value of cardValue">
+      <div class="container p-6">
+        <div class="grid grid-cols-12">
+          <div class="col-span-2">{{ value["Department"] }}</div>
+          <div class="col-span-8">
+            {{ value["Department"] }} posted on {{ value["Message_Location"] }}.
+            {{ value["Message"] }}
+          </div>
+          <div class="col-span-2">Pin/Unpin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
