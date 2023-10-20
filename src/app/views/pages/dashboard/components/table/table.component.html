@@ -1,33 +1,61 @@
-<div
-  class="container mt-2 border py-3 bg-transparent"
-  style="max-height: 160px"
->
-  <div class="container ms-9">Transport Operators</div>
-  <!-- Table Container -->
-  <div class="container w-auto ms-9">
-    <table class="">
+<div class="container mt-4 px-20 max-h-40">
+  <div class="container">
+    <span class="text-xl font-semibold">Transport Operators</span>
+  </div>
+  <div class="container max-w-full h-40 overflow-auto">
+    <!-- <table class="table-auto w-full border-separate h-20">
       <thead>
-        <div class="flex flex-row">
-          <tr>
-            Operator's Name
-          </tr>
-          <tr>
-            Date Enrolled
-          </tr>
-          <tr>
-            Jeepney Count
-          </tr>
-          <tr>
-            Driver Count
-          </tr>
-          <tr>
-            PAO Count
-          </tr>
-          <tr>
-            Status
-          </tr>
-        </div>
+        <tr>
+          <th class="text-start">Operator's Name</th>
+          <th class="text-start">Date Enrolled</th>
+          <th class="text-start">Jeepney Count</th>
+          <th class="text-start">Driver Count</th>
+          <th class="text-start">PAO Count</th>
+          <th class="text-start">Status</th>
+        </tr>
       </thead>
+      <tbody *ngFor="let operator of operators">
+        <tr>
+          <td>{{ operator["Operator_Name"] }}</td>
+          <td>{{ operator["Date_Enrolled"] }}</td>
+          <td>{{ operator["Jeepney_Count"] }}</td>
+          <td>{{ operator["Driver_Count"] }}</td>
+          <td>{{ operator["PAO_Count"] }}</td>
+          <td>{{ operator["Status"] }}</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="text-left w-full">
+      <thead class="flex w-full">
+        <tr class="flex w-full mb-4">
+          <th class="p-4 w-1/6">Operator's Name</th>
+          <th class="p-4 w-1/6">Date Enrolled</th>
+          <th class="p-4 w-1/6">Jeepney Count</th>
+          <th class="p-4 w-1/6">Driver Count</th>
+          <th class="p-4 w-1/6">PAO Count</th>
+          <th class="p-4 w-1/6">Status</th>
+        </tr>
+      </thead>
+      <!-- Remove the nasty inline CSS fixed height on production and replace it with a CSS class — this is just for demonstration purposes! -->
+      <tbody
+        class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full"
+        style="height: 100px"
+        *ngFor="let operator of operators"
+      >
+        <tr class="flex w-full mb-4">
+          <td class="p-4 w-1/6">{{ operator["Operator_Name"] }}</td>
+          <td class="p-4 w-1/6">{{ operator["Date_Enrolled"] }}</td>
+          <td class="p-4 w-1/6">{{ operator["Jeepney_Count"] }}</td>
+          <td class="p-4 w-1/6">{{ operator["Driver_Count"] }}</td>
+          <td class="p-4 w-1/6">{{ operator["PAO_Count"] }}</td>
+          <td class="p-4 w-1/6">
+            <span
+              class="float-right rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900 antialiased"
+              >{{ operator["Status"] }}</span
+            >
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
