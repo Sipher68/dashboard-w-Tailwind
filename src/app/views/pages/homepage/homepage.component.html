@@ -8,7 +8,7 @@
         <ul class="flex flex-col align-middle justify-center">
           <li *ngFor="let navItem of navItems" class="my-4">
             <a
-              routerLink="{{ navItem.link }}"
+              [routerLink]="navItem.link"
               class="font-bold text-xl"
               style="color: #a0a0a0"
               >{{ navItem.title }}</a
@@ -19,9 +19,9 @@
     </div>
 
     <!-- Content Container -->
-    <div class="container grid row-span-6 col-span-10 bg-transparent ps-6">
+    <main class="container row-span-6 col-span-10 bg-transparent ps-6">
       <router-outlet></router-outlet>
-    </div>
+    </main>
     <!--  -->
   </div>
 </div>

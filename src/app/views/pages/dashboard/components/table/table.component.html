@@ -1,8 +1,8 @@
-<div class="container mt-4 px-20 max-h-40">
+<div class="container mt-4 px-20 max-h-48">
   <div class="container">
     <span class="text-xl font-semibold">Transport Operators</span>
   </div>
-  <div class="container max-w-full h-40 overflow-auto">
+  <div class="container max-w-full h-48 overflow-auto">
     <!-- <table class="table-auto w-full border-separate h-20">
       <thead>
         <tr>
@@ -39,7 +39,6 @@
       <!-- Remove the nasty inline CSS fixed height on production and replace it with a CSS class — this is just for demonstration purposes! -->
       <tbody
         class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full"
-        style="height: 100px"
         *ngFor="let operator of operators"
       >
         <tr class="flex w-full mb-4">
@@ -48,7 +47,7 @@
           <td class="p-4 w-1/6">{{ operator["Jeepney_Count"] }}</td>
           <td class="p-4 w-1/6">{{ operator["Driver_Count"] }}</td>
           <td class="p-4 w-1/6">{{ operator["PAO_Count"] }}</td>
-          <td class="p-4 w-1/6">
+          <td class="p-4 w-1/6 flex justify-start">
             <span
               class="float-right rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900 antialiased"
               >{{ operator["Status"] }}</span
