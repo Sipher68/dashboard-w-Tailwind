@@ -1,9 +1,17 @@
 <!-- Page Container -->
 <div class="container ms-2">
   <!-- Elements Container -->
-  <div class="container flex align-top">
+  <div
+    class="container flex align-top mb-1 border rounded-xl border-e-0"
+    style="
+      border-color: white;
+      background-color: white;
+      max-height: 94px;
+      min-height: 94px;
+    "
+  >
     <!-- Title Element -->
-    <div
+    <!-- <div
       class="container mb-1 border rounded-xl flex border-e-0"
       style="
         border-color: white;
@@ -13,7 +21,8 @@
       "
     >
       <span class="text-4xl pt-5 ps-5">Dashboard</span>
-    </div>
+    </div> -->
+    <app-page-header [title]="'Dashboard'"></app-page-header>
   </div>
 
   <!-- Summary Element   -->

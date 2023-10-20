@@ -13,7 +13,7 @@ export class HomepageComponent {
     },
     {
       title: 'Transport Operators',
-      link: 'transport-operator',
+      link: 'transport-operators',
     },
     {
       title: 'Action Center',
