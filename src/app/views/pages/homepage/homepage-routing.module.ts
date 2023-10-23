@@ -6,6 +6,7 @@ import { TransportOperatorsComponent } from '../transport-operators/transport-op
 import { ActionCenterComponent } from '../action-center/action-center.component';
 import { PaoComponent } from '../pao/pao.component';
 import { DriverComponent } from '../driver/driver.component';
+import { BlacklistComponent } from '../blacklist/blacklist.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'driver',
         component: DriverComponent,
+      },
+      {
+        path: 'blacklist',
+        component: BlacklistComponent,
       },
     ],
   },

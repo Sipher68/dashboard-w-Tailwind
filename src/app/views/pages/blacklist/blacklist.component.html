@@ -1,1 +1,59 @@
-<p>blacklist works!</p>
+<!-- Page Container -->
+<div class="container ms-2">
+  <!-- Elements Container -->
+  <div
+    class="container flex align-top mb-6 border rounded-xl border-e-0"
+    style="
+      border-color: white;
+      background-color: white;
+      max-height: 94px;
+      min-height: 94px;
+    "
+  >
+    <!-- Title Element -->
+
+    <app-page-header [title]="'Blacklist'"></app-page-header>
+  </div>
+  <!-- Insert Page Elements Here -->
+
+  <!-- Search bar container -->
+  <div class="container bg-white rounded-xl">
+    <div class="container p-5 pb-0">
+      <div class="grid grid-cols-12">
+        <div class="col-span-6 border-b-2">Search</div>
+      </div>
+    </div>
+    <!-- Table Container -->
+
+    <div class="container min-h-[calc(100vh-140px)]">
+      <!-- Headers -->
+      <div class="grid grid-cols-7 font-bold text-center mb-0">
+        <div class="p-4">Name</div>
+        <div class="p-4">License</div>
+        <div class="p-4">Date Enrolled</div>
+        <div class="p-4">Date of Employment</div>
+        <div class="p-4">Employment Status</div>
+        <div class="p-4">No. of Violations</div>
+        <div class="p-4">Remarks</div>
+      </div>
+      <!-- Body -->
+      <div
+        class="container overflow-auto"
+        style="min-height: 600px; max-height: 600px"
+      >
+        <div
+          class="grid grid-cols-7 mb-4 border-t-2 border-b-2 border-red-500"
+          *ngFor="let blacklist of blackLists"
+        >
+          <div class="p-4">{{ blacklist.Name }}</div>
+          <div class="p-4">{{ blacklist.License }}</div>
+          <div class="p-4">{{ blacklist.Date_Enrolled }}</div>
+          <div class="p-4">{{ blacklist.Date_Of_Employment }}</div>
+          <div class="p-4">{{ blacklist.Employment_Status }}</div>
+          <div class="p-4">{{ blacklist.Violations }}</div>
+          <div class="p-4">{{ blacklist.Remarks }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
