@@ -7,6 +7,7 @@ import { ActionCenterComponent } from '../action-center/action-center.component'
 import { PaoComponent } from '../pao/pao.component';
 import { DriverComponent } from '../driver/driver.component';
 import { BlacklistComponent } from '../blacklist/blacklist.component';
+import { MyProfileComponent } from '../my-profile/my-profile.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'blacklist',
         component: BlacklistComponent,
+      },
+      {
+        path: 'profile',
+        component: MyProfileComponent,
       },
     ],
   },

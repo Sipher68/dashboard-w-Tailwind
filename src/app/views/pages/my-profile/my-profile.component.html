@@ -1,0 +1,150 @@
+<!-- Page Container -->
+<div class="container ms-2">
+  <!-- Elements Container -->
+  <div
+    class="container flex align-top mb-6 border rounded-xl border-e-0"
+    style="
+      border-color: white;
+      background-color: white;
+      max-height: 94px;
+      min-height: 94px;
+    "
+  >
+    <!-- Title Element -->
+
+    <app-page-header [title]="'My Profile'"></app-page-header>
+  </div>
+  <!-- Insert Page Elements Here -->
+  <div class="container bg-white rounded-t-xl">
+    <div class="container">
+      <!-- Profile Image And Name Container -->
+      <div class="container ml-6">
+        <div class="grid grid-cols-12">
+          <div class="col-span-2">
+            <img
+              class="rounded-full mx-5 mt-4"
+              alt="avatar1"
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+              style="max-height: 135px; max-width: 135px"
+            />
+          </div>
+          <div class="col-span-10 flex items-end">
+            <div>
+              <span>Alain G. Malenia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- User Information and Add User Container -->
+      <div
+        class="container w-11/12 ms-10 border-t-2 mt-3 h-3/4 overflow-y-auto"
+      >
+        <div class="container w-11/12">
+          <!-- User Information Container -->
+          <div class="container mx-10 my-5">
+            <div class="grid grid-rows-6">
+              <div class="row-span-2">
+                <div class="row-start-1 row-span-1 font-bold">
+                  User Information
+                </div>
+              </div>
+              <div class="row-span-4">
+                <div class="grid grid-cols-2">
+                  <div class="mt-4">
+                    <span>Mobile Number</span>
+                    <div>
+                      <textarea
+                        id="mobile_number"
+                        rows="1"
+                        class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                        placeholder="+63 464612"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <span>Email</span>
+                    <div>
+                      <textarea
+                        id="email"
+                        rows="1"
+                        class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                        placeholder="myprofile@gmail.com"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <span>Password</span>
+                    <div>
+                      <textarea
+                        id="password"
+                        rows="1"
+                        class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                        placeholder="**********"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <span>SPIN</span>
+                    <div>
+                      <textarea
+                        id="SPIN"
+                        rows="1"
+                        class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                        placeholder="5541"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add User Container -->
+          <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+          <div class="container mx-10 my-5">
+            <div class="grid grid-rows-6">
+              <div class="row-span-2">
+                <div class="row-start-1 row-span-1 font-bold">Add User</div>
+              </div>
+              <div class="row-span-4">
+                <div class="grid grid-cols-2">
+                  <div class="mt-4">
+                    <textarea
+                      id="new_name"
+                      rows="1"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      placeholder="Name"
+                    ></textarea>
+                  </div>
+                  <div class="mt-4">
+                    <textarea
+                      id="new_mobile_number"
+                      rows="1"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      placeholder="Mobile Number"
+                    ></textarea>
+                  </div>
+                  <div class="mt-4">
+                    <textarea
+                      id="new_email"
+                      rows="1"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      placeholder="Email"
+                    ></textarea>
+                  </div>
+                  <div class="mt-4">
+                    <textarea
+                      id="access_rights"
+                      rows="1"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      placeholder="Access Rights"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
