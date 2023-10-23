@@ -1,0 +1,45 @@
+<div class="container mt-3 bg-white rounded-t-lg">
+  <!-- Search bar container -->
+  <div class="container p-5 pb-0">
+    <div class="grid grid-cols-12">
+      <div class="col-span-6 border-b-2">Search</div>
+    </div>
+  </div>
+  <!-- Filter Container -->
+  <div class="container p-1">
+    <div class="grid grid-cols-5">
+      <div class="row-span-6 border-e-2">Violation</div>
+      <div class="row-span-6 border-e-2">No. of Violation</div>
+      <div class="row-span-6 border-e-2">Date Enrolled</div>
+      <div class="row-span-6 border-e-2">Employment Status</div>
+      <div class="row-span-6 border-e-2"></div>
+    </div>
+  </div>
+  <!-- Table Container -->
+
+  <div class="container">
+    <!-- Headers -->
+    <div class="grid grid-cols-7 font-bold text-center mb-0">
+      <div class="p-4">Name</div>
+      <div class="p-4">License</div>
+      <div class="p-4">Date Enrolled</div>
+      <div class="p-4">Date of Employment</div>
+      <div class="p-4">Employment Status</div>
+      <div class="p-4">No. of Violations</div>
+      <div class="p-4">Remarks</div>
+    </div>
+    <!-- Body -->
+    <div
+      class="grid grid-cols-7 mb-4 odd:bg-gray-200 even:bg-white text-center"
+      *ngFor="let data of table"
+    >
+      <div class="p-4">{{ data.Name }}</div>
+      <div class="p-4">{{ data.License }}</div>
+      <div class="p-4">{{ data.Date_Enrolled }}</div>
+      <div class="p-4">{{ data.Date_Of_Employment }}</div>
+      <div class="p-4">{{ data.Employment_Status }}</div>
+      <div class="p-4">{{ data.Violations }}</div>
+      <div class="p-4">{{ data.Remarks }}</div>
+    </div>
+  </div>
+</div>

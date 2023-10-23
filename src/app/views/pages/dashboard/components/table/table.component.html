@@ -3,28 +3,6 @@
     <span class="text-xl font-semibold">Transport Operators</span>
   </div>
   <div class="container max-w-full h-48 overflow-auto">
-    <!-- <table class="table-auto w-full border-separate h-20">
-      <thead>
-        <tr>
-          <th class="text-start">Operator's Name</th>
-          <th class="text-start">Date Enrolled</th>
-          <th class="text-start">Jeepney Count</th>
-          <th class="text-start">Driver Count</th>
-          <th class="text-start">PAO Count</th>
-          <th class="text-start">Status</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let operator of operators">
-        <tr>
-          <td>{{ operator["Operator_Name"] }}</td>
-          <td>{{ operator["Date_Enrolled"] }}</td>
-          <td>{{ operator["Jeepney_Count"] }}</td>
-          <td>{{ operator["Driver_Count"] }}</td>
-          <td>{{ operator["PAO_Count"] }}</td>
-          <td>{{ operator["Status"] }}</td>
-        </tr>
-      </tbody>
-    </table> -->
     <table class="text-left w-full">
       <thead class="flex w-full">
         <tr class="flex w-full mb-4">
@@ -36,7 +14,7 @@
           <th class="p-4 w-1/6">Status</th>
         </tr>
       </thead>
-      <!-- Remove the nasty inline CSS fixed height on production and replace it with a CSS class — this is just for demonstration purposes! -->
+
       <tbody
         class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full"
         *ngFor="let operator of operators"

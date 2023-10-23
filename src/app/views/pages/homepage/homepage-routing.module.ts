@@ -4,6 +4,8 @@ import { HomepageComponent } from './homepage.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { TransportOperatorsComponent } from '../transport-operators/transport-operators.component';
 import { ActionCenterComponent } from '../action-center/action-center.component';
+import { PaoComponent } from '../pao/pao.component';
+import { DriverComponent } from '../driver/driver.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
       {
         path: 'action-center',
         component: ActionCenterComponent,
+      },
+      {
+        path: 'pao',
+        component: PaoComponent,
+      },
+      {
+        path: 'driver',
+        component: DriverComponent,
       },
     ],
   },
