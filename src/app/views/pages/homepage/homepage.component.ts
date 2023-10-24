@@ -37,7 +37,7 @@ export class HomepageComponent {
     },
     {
       title: 'Profile',
-      link: 'profile-component',
+      link: 'profile-card',
     },
   ];
 }

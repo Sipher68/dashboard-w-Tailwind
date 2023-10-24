@@ -8,6 +8,7 @@ import { PaoComponent } from '../pao/pao.component';
 import { DriverComponent } from '../driver/driver.component';
 import { BlacklistComponent } from '../blacklist/blacklist.component';
 import { MyProfileComponent } from '../my-profile/my-profile.component';
+import { ProfileCardComponent } from '../../components/profile-card/profile-card.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     component: HomepageComponent,
     children: [
       //Insert children component here (for nav)
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
       {
         path: 'dashboard',
         component: DashboardComponent,
@@ -42,6 +48,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: MyProfileComponent,
+      },
+      {
+        path: 'profile-card',
+        component: ProfileCardComponent,
       },
     ],
   },
