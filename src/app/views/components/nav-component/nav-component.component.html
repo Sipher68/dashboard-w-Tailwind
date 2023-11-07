@@ -1,0 +1,12 @@
+<nav class="col-span-full flex justify-center">
+  <ul class="flex flex-col align-middle justify-center">
+    <li *ngFor="let navItem of navItems" class="my-4">
+      <a
+        [routerLink]="navItem.link"
+        class="font-bold text-xl"
+        style="color: #a0a0a0"
+        >{{ navItem.title }}</a
+      >
+    </li>
+  </ul>
+</nav>

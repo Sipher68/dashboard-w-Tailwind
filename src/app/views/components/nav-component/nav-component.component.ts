@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  selector: 'app-nav-component',
+  templateUrl: './nav-component.component.html',
+  styleUrls: ['./nav-component.component.scss'],
+  standalone: true,
 })
-export class HomepageComponent {
-  isNavOpen = false;
+export class NavComponentComponent {
   navItems = [
     {
       title: 'Dashboard',
