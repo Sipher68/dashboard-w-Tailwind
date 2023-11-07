@@ -1,11 +1,9 @@
-<div class="container mt-4 px-20 max-h-48">
-  <div class="container">
-    <span class="text-xl font-semibold">Transport Operators</span>
-  </div>
-  <div class="container max-w-full h-48 overflow-auto">
+<div class="container mt-4 px-20 max-h-40">
+  <h2 class="text-xl font-semibold">Transport Operators</h2>
+  <div class="container max-w-full h-40 overflow-auto">
     <table class="text-left w-full">
-      <thead class="flex w-full">
-        <tr class="flex w-full mb-4">
+      <thead>
+        <tr class="sticky-header">
           <th class="p-4 w-1/6">Operator's Name</th>
           <th class="p-4 w-1/6">Date Enrolled</th>
           <th class="p-4 w-1/6">Jeepney Count</th>
@@ -14,22 +12,19 @@
           <th class="p-4 w-1/6">Status</th>
         </tr>
       </thead>
-
-      <tbody
-        class="bg-grey-light flex flex-col items-center justify-between w-full"
-        *ngFor="let operator of operators"
-      >
-        <tr class="flex w-full mb-4">
-          <td class="p-4 w-1/6">{{ operator["Operator_Name"] }}</td>
-          <td class="p-4 w-1/6">{{ operator["Date_Enrolled"] }}</td>
-          <td class="p-4 w-1/6">{{ operator["Jeepney_Count"] }}</td>
-          <td class="p-4 w-1/6">{{ operator["Driver_Count"] }}</td>
-          <td class="p-4 w-1/6">{{ operator["PAO_Count"] }}</td>
-          <td class="p-4 w-1/6 flex justify-start">
+      <tbody *ngFor="let operator of operators">
+        <tr>
+          <td class="p-4 w-1/6">{{ operator.Operator_Name }}</td>
+          <td class="p-4 w-1/6">{{ operator.Date_Enrolled }}</td>
+          <td class="p-4 w-1/6">{{ operator.Jeepney_Count }}</td>
+          <td class="p-4 w-1/6">{{ operator.Driver_Count }}</td>
+          <td class="p-4 w-1/6">{{ operator.PAO_Count }}</td>
+          <td class="p-4 w-1/6">
             <span
-              class="float-right rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900 antialiased"
-              >{{ operator["Status"] }}</span
+              class="rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900"
             >
+              {{ operator.Status }}
+            </span>
           </td>
         </tr>
       </tbody>
