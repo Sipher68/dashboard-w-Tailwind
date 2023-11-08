@@ -10,7 +10,12 @@
   </div>
   <!-- Content Group -->
   <div class="container overflow-y-auto" style="height: 610px">
-    <div class="container my-10" *ngFor="let value of cardValue">
+    <div
+      class="container my-10"
+      *ngFor="let value of cardValue"
+      (click)="onClick(value['Operator_ID'])"
+      style="cursor: pointer"
+    >
       <div
         class="grid grid-cols-6 justify-around border border-white bg-white rounded-lg h-28"
       >

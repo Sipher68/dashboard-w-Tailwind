@@ -4,6 +4,7 @@ import { ChangePhoneNumberComponent } from '../../components/modals/change-phone
 import { ChangePasswordComponent } from '../../components/modals/change-password/change-password.component';
 import { ChangeEmailComponent } from '../../components/modals/change-email/change-email.component';
 import { ChangeSpinComponent } from '../../components/modals/change-spin/change-spin.component';
+import { faker } from '@faker-js/faker';
 
 @Component({
   selector: 'app-my-profile',
@@ -18,4 +19,7 @@ import { ChangeSpinComponent } from '../../components/modals/change-spin/change-
     ChangeSpinComponent,
   ],
 })
-export class MyProfileComponent {}
+export class MyProfileComponent {
+  profileName = faker.person.firstName() + ' ' + faker.person.lastName();
+  profilePicture = faker.image.cats();
+}

@@ -24,13 +24,13 @@
             <img
               class="rounded-full mx-5 mt-4"
               alt="avatar1"
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+              src="{{ profilePicture }}"
               style="max-height: 135px; max-width: 135px"
             />
           </div>
           <div class="col-span-10 flex items-end">
             <div>
-              <span>Alain G. Malenia</span>
+              <span>{{ profileName }}</span>
             </div>
           </div>
         </div>
@@ -120,40 +120,40 @@
                     ></textarea>
                   </div>
                   <div class="mt-4">
-                    <textarea
+                    <input
                       id="new_mobile_number"
-                      rows="1"
-                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      type="text"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Mobile Number"
-                    ></textarea>
+                    />
                   </div>
                   <div class="mt-4">
-                    <textarea
+                    <input
                       id="new_email"
-                      rows="1"
-                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      type="text"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Email"
-                    ></textarea>
+                    />
                   </div>
                   <div class="mt-4">
-                    <textarea
+                    <input
                       id="access_rights"
-                      rows="1"
-                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                      type="text"
+                      class="block p-2.5 w-3/5 text-sm text-gray-900 bg-white rounded-none border-b border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Access Rights"
-                    ></textarea>
+                    />
+                  </div>
+                  <div class="mt-4 flex justify-center">
+                    <button
+                      type="button"
+                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="container flex justify-center">
-            <button
-              type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            >
-              Submit
-            </button>
           </div>
         </div>
       </div>

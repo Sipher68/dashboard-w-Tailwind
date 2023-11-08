@@ -1,250 +1,95 @@
+import { faker } from '@faker-js/faker';
+
+function generateOperatorData(count: number) {
+  let operators = [];
+  for (let i = 1; i <= count; i++) {
+    operators.push({
+      Operator_ID: i,
+      Operator_Name: faker.company.name(),
+      Date_Enrolled: faker.date.past().toLocaleDateString(),
+      Jeepney_Count: faker.number.int(100),
+      Driver_Count: faker.number.int(100),
+      PAO_Count: faker.number.int(100),
+      Status: faker.helpers.arrayElement(['Active', 'Inactive']),
+    });
+  }
+  return operators;
+}
+
+function generatePAOData(count: number) {
+  let pao = [];
+  for (let i = 1; i <= count; i++) {
+    pao.push({
+      PAO_ID: faker.number.int({ min: 1, max: 50 }),
+      Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      License: faker.string.alphanumeric(8),
+      Date_Enrolled: faker.date.past().toLocaleDateString(),
+      Date_Of_Employment: faker.date.past().toLocaleDateString(),
+      Employment_Status: faker.helpers.arrayElement(['Active', 'Inactive']),
+      Violations: faker.number.int(20),
+      Remarks: faker.helpers.arrayElement(['Good', 'Great', 'Bad']),
+    });
+  }
+  return pao;
+}
+
+function generateDriverData(count: number) {
+  let drivers = [];
+  for (let i = 1; i <= count; i++) {
+    drivers.push({
+      Driver_ID: faker.number.int({ min: 1, max: 50 }),
+      Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      License: faker.string.alphanumeric(8),
+      Date_Enrolled: faker.date.past().toLocaleDateString(),
+      Date_Of_Employment: faker.date.past().toLocaleDateString(),
+      Employment_Status: faker.helpers.arrayElement(['Active', 'Inactive']),
+      Violations: faker.number.int(20),
+      Remarks: faker.helpers.arrayElement(['Good', 'Great', 'Bad']),
+    });
+  }
+  return drivers;
+}
+
+function generateBlacklist(count: number) {
+  let blacklist = [];
+  for (let i = 0; i <= count; i++) {
+    blacklist.push({
+      Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      License: faker.string.alphanumeric(8),
+      Date_Enrolled: faker.date.past().toLocaleDateString(),
+      Date_Of_Employment: faker.date.past().toLocaleDateString(),
+      Employment_Status: faker.helpers.arrayElement(['BLACKLISTED']),
+      Violations: faker.number.int({ min: 15, max: 20 }),
+      Remarks: faker.helpers.arrayElement(['Too Many Violations']),
+    });
+  }
+  return blacklist;
+}
+
+function generateBulletinData(count: number) {
+  let bulletin = [];
+  for (let i = 1; i <= count; i++) {
+    bulletin.push({
+      Department: faker.helpers.arrayElement(['CCTO', 'LTFRB']),
+      Message_Location: faker.helpers.arrayElement([
+        'MEMO',
+        'VIOLATION',
+        'PAYMENT DUES',
+      ]),
+      Message: faker.lorem.sentence(),
+    });
+  }
+  return bulletin;
+}
+
 export const data = {
-  Operators: {
-    '1': {
-      Operator_Name: 'BUS OPERATOR 1',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 20,
-      Driver_Count: 20,
-      PAO_Count: 20,
-      Status: 'Active',
-    },
-    '2': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 50,
-      Driver_Count: 50,
-      PAO_Count: 20,
-      Status: 'Active',
-    },
-    '3': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 35,
-      Driver_Count: 35,
-      PAO_Count: 50,
-      Status: 'Active',
-    },
-    '4': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 40,
-      Driver_Count: 35,
-      PAO_Count: 35,
-      Status: 'Active',
-    },
-    '5': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 80,
-      Driver_Count: 80,
-      PAO_Count: 80,
-      Status: 'Active',
-    },
-    '6': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 50,
-      Driver_Count: 50,
-      PAO_Count: 50,
-      Status: 'Active',
-    },
-    '7': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 50,
-      Driver_Count: 60,
-      PAO_Count: 50,
-      Status: 'Active',
-    },
-    '8': {
-      Operator_Name: 'BUS OPERATOR 2',
-      Date_Enrolled: '06/09/2023',
-      Jeepney_Count: 60,
-      Driver_Count: 60,
-      PAO_Count: 60,
-      Status: 'Active',
-    },
-  },
+  Operators: generateOperatorData(50),
 
-  PAO: {
-    '1': {
-      Name: 'Kian Mantua',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Great',
-    },
-    '2': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '3': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '4': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '5': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '6': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '7': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-  },
+  PAO: generatePAOData(100),
 
-  Drivers: {
-    '1': {
-      Name: 'Kian Mantua',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Great',
-    },
-    '2': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '3': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '4': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '5': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '6': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-    '7': {
-      Name: 'Sam Alforque',
-      License: 'A0-23-4456',
-      Date_Enrolled: '06/09/2023',
-      Date_Of_Employment: '06/09/2020',
-      Employment_Status: 'Active',
-      Violations: 0,
-      Remarks: 'Good',
-    },
-  },
+  Drivers: generateDriverData(100),
 
-  Blacklisted: {
-    '1': {
-      Name: 'Sean Cruz',
-      License: 'AP-234467',
-      Date_Enrolled: '09/11/23',
-      Date_Of_Employment: '01/01/21',
-      Employment_Status: 'BLACKLISTED',
-      Violations: 15,
-      Remarks: 'Too Many',
-    },
-    '2': {
-      Name: 'Sean Cruz',
-      License: 'AP-234467',
-      Date_Enrolled: '09/11/23',
-      Date_Of_Employment: '01/01/21',
-      Employment_Status: 'BLACKLISTED',
-      Violations: 15,
-      Remarks: 'Too Many',
-    },
-    '3': {
-      Name: 'Sean Cruz',
-      License: 'AP-234467',
-      Date_Enrolled: '09/11/23',
-      Date_Of_Employment: '01/01/21',
-      Employment_Status: 'BLACKLISTED',
-      Violations: 15,
-      Remarks: 'Too Many',
-    },
-    '4': {
-      Name: 'Sean Cruz',
-      License: 'AP-234467',
-      Date_Enrolled: '09/11/23',
-      Date_Of_Employment: '01/01/21',
-      Employment_Status: 'BLACKLISTED',
-      Violations: 15,
-      Remarks: 'Too Many',
-    },
-    '5': {
-      Name: 'Sean Cruz',
-      License: 'AP-234467',
-      Date_Enrolled: '09/11/23',
-      Date_Of_Employment: '01/01/21',
-      Employment_Status: 'BLACKLISTED',
-      Violations: 15,
-      Remarks: 'Too Many',
-    },
-  },
+  Blacklisted: generateBlacklist(50),
 
   Profile: {
     Name: '',
@@ -254,46 +99,5 @@ export const data = {
     SPIN: '',
   },
 
-  Bulletin: {
-    1: {
-      Department: 'CCTO',
-      Message_Location: 'MEMO',
-      Message: 'Re-routing due to road repair and construction',
-    },
-    2: {
-      Department: 'LTFRB',
-      Message_Location: 'MEMO',
-      Message: 'PUVs caught overloading will be fined PHP 1,500.00',
-    },
-    3: {
-      Department: 'CCTO',
-      Message_Location: 'MEMO',
-      Message: 'Re-routing due to road repair and construction',
-    },
-    4: {
-      Department: 'LTFRB',
-      Message_Location: 'MEMO',
-      Message: 'PUVs caught overloading will be fined PHP 1,500.00',
-    },
-    5: {
-      Department: 'CCTO',
-      Message_Location: 'MEMO',
-      Message: 'Re-routing due to road repair and construction',
-    },
-    6: {
-      Department: 'LTFRB',
-      Message_Location: 'MEMO',
-      Message: 'PUVs caught overloading will be fined PHP 1,500.00',
-    },
-    7: {
-      Department: 'CCTO',
-      Message_Location: 'MEMO',
-      Message: 'Re-routing due to road repair and construction',
-    },
-    8: {
-      Department: 'LTFRB',
-      Message_Location: 'MEMO',
-      Message: 'PUVs caught overloading will be fined PHP 1,500.00',
-    },
-  },
+  Bulletin: generateBulletinData(50),
 };
