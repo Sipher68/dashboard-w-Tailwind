@@ -18,9 +18,13 @@ export class SummaryComponent {
 
   public jeepCount = 0;
 
-  public paoCount = Object.keys(data.PAO).length;
+  public paoArr: any = Object.values(this.TO);
 
-  public driverCount = Object.keys(data.Drivers).length;
+  public paoCount = 0;
+
+  public driverArr: any = Object.values(this.TO);
+
+  public driverCount = 0;
 
   public summaryItems: any[] = [];
 
@@ -28,6 +32,15 @@ export class SummaryComponent {
     for (let i = 0; i < this.TOcount; i++) {
       this.jeepCount = this.jeepCount + this.jeepArr[i]['Jeepney_Count'];
     }
+
+    for (let i = 0; i < this.TOcount; i++) {
+      this.paoCount = this.paoCount + this.paoArr[i]['PAO_Count'];
+    }
+
+    for (let i = 0; i < this.TOcount; i++) {
+      this.driverCount = this.driverCount + this.driverArr[i]['Driver_Count'];
+    }
+
     this.summaryItems = [
       { title: 'No. of Transport Operators', count: this.TOcount },
       { title: 'No. of Jeepneys', count: this.jeepCount },

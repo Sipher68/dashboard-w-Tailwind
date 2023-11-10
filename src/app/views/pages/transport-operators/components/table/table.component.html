@@ -1,4 +1,4 @@
-<div class="container mt-10 px-10" style="height: 630px">
+<div class="container mt-10 px-10" style="height: 720px">
   <!-- Header Group -->
   <div class="grid grid-cols-6 justify-around">
     <div class="row-span-6"></div>
@@ -9,12 +9,11 @@
     <div class="row-span-6 text-center">Status</div>
   </div>
   <!-- Content Group -->
-  <div class="container overflow-y-auto" style="height: 610px">
+  <div class="container overflow-y-auto" style="height: 700px">
     <div
-      class="container my-10"
+      class="container my-5 cursor-pointer"
       *ngFor="let value of cardValue"
       (click)="onClick(value['Operator_ID'])"
-      style="cursor: pointer"
     >
       <div
         class="grid grid-cols-6 justify-around border border-white bg-white rounded-lg h-28"

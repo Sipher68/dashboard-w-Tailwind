@@ -21,6 +21,7 @@ function generatePAOData(count: number) {
   for (let i = 1; i <= count; i++) {
     pao.push({
       PAO_ID: faker.number.int({ min: 1, max: 50 }),
+      Operator_ID: faker.number.int({ min: 1, max: 50 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
@@ -38,6 +39,7 @@ function generateDriverData(count: number) {
   for (let i = 1; i <= count; i++) {
     drivers.push({
       Driver_ID: faker.number.int({ min: 1, max: 50 }),
+      Operator_ID: faker.number.int({ min: 1, max: 50 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
@@ -55,6 +57,7 @@ function generateBlacklist(count: number) {
   for (let i = 0; i <= count; i++) {
     blacklist.push({
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      Operator_ID: 1,
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
       Date_Of_Employment: faker.date.past().toLocaleDateString(),
@@ -83,13 +86,13 @@ function generateBulletinData(count: number) {
 }
 
 export const data = {
-  Operators: generateOperatorData(50),
+  Operators: generateOperatorData(faker.number.int(50)),
 
-  PAO: generatePAOData(100),
+  PAO: generatePAOData(faker.number.int(50)),
 
-  Drivers: generateDriverData(100),
+  Drivers: generateDriverData(faker.number.int(50)),
 
-  Blacklisted: generateBlacklist(50),
+  Blacklisted: generateBlacklist(faker.number.int(50)),
 
   Profile: {
     Name: '',

@@ -9,6 +9,7 @@ import { DriverComponent } from '../driver/driver.component';
 import { BlacklistComponent } from '../blacklist/blacklist.component';
 import { MyProfileComponent } from '../my-profile/my-profile.component';
 import { ProfileCardComponent } from '../../components/profile-card/profile-card.component';
+import { ReusableTableComponent } from '../../components/reusable-table/reusable-table.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
         component: TransportOperatorsComponent,
       },
       {
+        path: 'transport-operators/:id',
+        component: ReusableTableComponent,
+      },
+      {
         path: 'action-center',
         component: ActionCenterComponent,
       },
@@ -38,12 +43,24 @@ const routes: Routes = [
         component: PaoComponent,
       },
       {
+        path: 'pao/:id',
+        component: ProfileCardComponent,
+      },
+      {
         path: 'driver',
         component: DriverComponent,
       },
       {
+        path: 'driver/:id',
+        component: ProfileCardComponent,
+      },
+      {
         path: 'blacklist',
         component: BlacklistComponent,
+      },
+      {
+        path: 'blacklist/:id',
+        component: ProfileCardComponent,
       },
       {
         path: 'profile',

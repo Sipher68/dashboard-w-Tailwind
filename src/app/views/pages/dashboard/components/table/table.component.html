@@ -1,27 +1,27 @@
-<div class="container mt-4 px-20 max-h-40">
+<div class="container mt-4 px-10 max-h-52">
   <h2 class="text-xl font-semibold">Transport Operators</h2>
-  <div class="container max-w-full h-40 overflow-auto">
+  <div class="container max-w-full h-60 overflow-auto">
     <table class="text-left w-full">
       <thead>
         <tr class="sticky-header">
-          <th class="p-4 w-1/6">Operator's Name</th>
-          <th class="p-4 w-1/6">Date Enrolled</th>
-          <th class="p-4 w-1/6">Jeepney Count</th>
-          <th class="p-4 w-1/6">Driver Count</th>
-          <th class="p-4 w-1/6">PAO Count</th>
-          <th class="p-4 w-1/6">Status</th>
+          <th class="p-4 w-1/6 text-center">Operator's Name</th>
+          <th class="p-4 w-1/6 text-center">Date Enrolled</th>
+          <th class="p-4 w-1/6 text-center">Jeepney Count</th>
+          <th class="p-4 w-1/6 text-center">Driver Count</th>
+          <th class="p-4 w-1/6 text-center">PAO Count</th>
+          <th class="p-4 w-1/6 text-center">Status</th>
         </tr>
       </thead>
       <tbody *ngFor="let operator of operators">
         <tr>
-          <td class="p-4 w-1/6">{{ operator.Operator_Name }}</td>
-          <td class="p-4 w-1/6">{{ operator.Date_Enrolled }}</td>
-          <td class="p-4 w-1/6">{{ operator.Jeepney_Count }}</td>
-          <td class="p-4 w-1/6">{{ operator.Driver_Count }}</td>
-          <td class="p-4 w-1/6">{{ operator.PAO_Count }}</td>
-          <td class="p-4 w-1/6">
+          <td class="p-4 w-1/6 text-center">{{ operator.Operator_Name }}</td>
+          <td class="p-4 w-1/6 text-center">{{ operator.Date_Enrolled }}</td>
+          <td class="p-4 w-1/6 text-center">{{ operator.Jeepney_Count }}</td>
+          <td class="p-4 w-1/6 text-center">{{ operator.Driver_Count }}</td>
+          <td class="p-4 w-1/6 text-center">{{ operator.PAO_Count }}</td>
+          <td class="p-4 w-1/6 text-center">
             <span
-              class="rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900"
+              class="rounded-md bg-green-600/50 px-4 py-px text-xs font-semibold uppercase text-green-900 text-center"
             >
               {{ operator.Status }}
             </span>
