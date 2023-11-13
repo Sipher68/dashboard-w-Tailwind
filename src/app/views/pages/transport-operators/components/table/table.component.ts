@@ -30,8 +30,7 @@ export class TableComponent {
   }
 
   onClick(id: number) {
-    console.log('Clicked');
-    console.log(id);
+    // Navigate to the operator's page
     this.router.navigate([`/transport-operators/${id}`]);
   }
 }

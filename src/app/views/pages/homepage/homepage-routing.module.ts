@@ -52,6 +52,7 @@ const routes: Routes = [
       },
       {
         path: 'driver/:id',
+
         component: ProfileCardComponent,
       },
       {
@@ -65,10 +66,6 @@ const routes: Routes = [
       {
         path: 'profile',
         component: MyProfileComponent,
-      },
-      {
-        path: 'profile-card',
-        component: ProfileCardComponent,
       },
     ],
   },

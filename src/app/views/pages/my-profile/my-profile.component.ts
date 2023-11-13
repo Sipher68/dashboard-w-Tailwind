@@ -21,5 +21,5 @@ import { faker } from '@faker-js/faker';
 })
 export class MyProfileComponent {
   profileName = faker.person.firstName() + ' ' + faker.person.lastName();
-  profilePicture = faker.image.cats();
+  profilePicture = faker.image.urlLoremFlickr({ category: 'cats' });
 }

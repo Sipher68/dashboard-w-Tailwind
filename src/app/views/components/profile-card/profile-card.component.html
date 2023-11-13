@@ -12,7 +12,7 @@
   >
     <!-- Title Element -->
 
-    <app-page-header [title]="'PAO Profile'"></app-page-header>
+    <app-page-header [title]="profile_type"></app-page-header>
   </div>
 
   <!-- Page Elements Go Here -->
@@ -27,7 +27,7 @@
               <img
                 class="rounded-full mx-5 mt-4"
                 alt="avatar1"
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                src="{{ profile_data.Profile_Picture }}"
                 style="max-height: 175px; max-width: 175x"
               />
             </div>
@@ -35,38 +35,41 @@
           <div class="row-span-4">
             <!-- User Card Profile Information -->
             <div class="container w-full h-14 bg-neutral-100 flex items-center">
-              <div class="ml-14">
-                <span> Name: </span>
+              <div class="ml-14 font-bold">
+                <span>Name: {{ profile_data.Name }}</span>
               </div>
             </div>
             <div class="container w-full h-14 flex items-center">
-              <div class="ml-14">
-                <span>License: </span>
+              <div class="ml-14 font-bold">
+                <span>License: {{ profile_data.License }}</span>
               </div>
             </div>
             <div class="container w-full h-14 bg-neutral-100 flex items-center">
-              <div class="ml-14">
-                <span>Date Enrolled: </span>
+              <div class="ml-14 font-bold">
+                <span>Date Enrolled: {{ profile_data.Date_Enrolled }} </span>
               </div>
             </div>
             <div class="container w-full h-14 flex items-center">
-              <div class="ml-14">
-                <span>Date of Employment: </span>
+              <div class="ml-14 font-bold">
+                <span
+                  >Date of Employment: {{ profile_data.Date_Of_Employment }}
+                </span>
               </div>
             </div>
             <div class="container w-full h-14 bg-neutral-100 flex items-center">
-              <div class="ml-14">
+              <div class="ml-14 font-bold">
                 <span> Employment Status: </span>
+                <span>{{ profile_data.Employment_Status }}</span>
               </div>
             </div>
             <div class="container w-full h-14 flex items-center">
-              <div class="ml-14">
-                <span>No. of Violations: </span>
+              <div class="ml-14 font-bold">
+                <span>No. of Violations: {{ profile_data.Violations }} </span>
               </div>
             </div>
             <div class="container w-full h-14 bg-neutral-100 flex items-center">
-              <div class="ml-14">
-                <span>Remarks: </span>
+              <div class="ml-14 font-bold">
+                <span>Remarks: {{ profile_data.Remarks }} </span>
               </div>
             </div>
           </div>

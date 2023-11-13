@@ -1,6 +1,4 @@
-<div>
-  <app-page-header [title]="tableName"></app-page-header>
-</div>
+<app-page-header [title]="tableName"></app-page-header>
 
 <div class="mt-3 bg-white rounded-t-lg">
   <!-- Search bar container -->
@@ -38,8 +36,9 @@
       style="min-height: 600px; max-height: 600px"
     >
       <div
-        class="grid grid-cols-7 mb-4 odd:bg-gray-200 even:bg-white text-center"
+        class="grid grid-cols-7 mb-4 odd:bg-gray-200 even:bg-white text-center cursor-pointer"
         *ngFor="let data of table"
+        (click)="onClick(data['ID'], data['ID_Type'])"
       >
         <div class="p-4" style="color: #2a5bfb">{{ data.Name }}</div>
         <div class="p-4">{{ data.License }}</div>

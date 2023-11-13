@@ -36,9 +36,5 @@ export class HomepageComponent {
       title: 'My Profile',
       link: 'profile',
     },
-    {
-      title: 'Profile',
-      link: 'profile-card',
-    },
   ];
 }

@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { data } from 'src/data/mockdata';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
 import { WritePostComponent } from '../write-post/write-post.component';
 import { PageHeaderComponent } from '../page-header/page-header.component';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-reusable-table',
@@ -25,7 +26,11 @@ export class ReusableTableComponent {
 
   public routeID: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -35,10 +40,10 @@ export class ReusableTableComponent {
 
     // Configure table data based on Operator ID
     if (this.routeID) {
-      let operatorName = data.Operators[this.routeID].Operator_Name;
+      let operatorName = data.Operators[this.routeID - 1].Operator_Name;
       this.tableName = operatorName;
       this.table = Object.values(
-        data.PAO.filter((x) => x.Operator_ID == this.routeID)
+        data.PAO.filter((x) => x.Operator_ID == this.routeID - 1)
       );
     }
 
@@ -53,5 +58,15 @@ export class ReusableTableComponent {
         // Handle the case where tableType is not 'PAO' or 'Drivers'
         break;
     }
+  }
+
+  onClick(id: number, id_type: string) {
+    // Identify if PAO or Driver using id_type parameter and redirect to appropriate route
+    id_type = id_type.toLowerCase();
+    // Clears query data before setting new data
+    this.sharedService.clearQueryData();
+    // Set query data
+    this.sharedService.setQueryData({ id: id, type: id_type });
+    this.router.navigate([`/${id_type}/${id}`]);
   }
 }

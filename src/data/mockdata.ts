@@ -20,9 +20,11 @@ function generatePAOData(count: number) {
   let pao = [];
   for (let i = 1; i <= count; i++) {
     pao.push({
-      PAO_ID: faker.number.int({ min: 1, max: 50 }),
+      ID: i,
+      ID_Type: 'PAO',
       Operator_ID: faker.number.int({ min: 1, max: 50 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      Profile_Picture: faker.image.avatar(),
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
       Date_Of_Employment: faker.date.past().toLocaleDateString(),
@@ -38,9 +40,11 @@ function generateDriverData(count: number) {
   let drivers = [];
   for (let i = 1; i <= count; i++) {
     drivers.push({
-      Driver_ID: faker.number.int({ min: 1, max: 50 }),
+      ID: i,
+      ID_Type: 'Driver',
       Operator_ID: faker.number.int({ min: 1, max: 50 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      Profile_Picture: faker.image.avatar(),
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
       Date_Of_Employment: faker.date.past().toLocaleDateString(),
@@ -54,9 +58,12 @@ function generateDriverData(count: number) {
 
 function generateBlacklist(count: number) {
   let blacklist = [];
-  for (let i = 0; i <= count; i++) {
+  for (let i = 1; i <= count; i++) {
     blacklist.push({
+      ID: i,
+      ID_Type: faker.helpers.arrayElement(['PAO', 'Driver']),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
+      Profile_Picture: faker.image.avatar(),
       Operator_ID: 1,
       License: faker.string.alphanumeric(8),
       Date_Enrolled: faker.date.past().toLocaleDateString(),
@@ -86,13 +93,13 @@ function generateBulletinData(count: number) {
 }
 
 export const data = {
-  Operators: generateOperatorData(faker.number.int(50)),
+  Operators: generateOperatorData(faker.number.int({ min: 1, max: 50 })),
 
-  PAO: generatePAOData(faker.number.int(50)),
+  PAO: generatePAOData(faker.number.int({ min: 1, max: 50 })),
 
-  Drivers: generateDriverData(faker.number.int(50)),
+  Drivers: generateDriverData(faker.number.int({ min: 1, max: 50 })),
 
-  Blacklisted: generateBlacklist(faker.number.int(50)),
+  Blacklisted: generateBlacklist(faker.number.int({ min: 1, max: 50 })),
 
   Profile: {
     Name: '',
