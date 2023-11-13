@@ -1,12 +1,24 @@
 <!-- Main Container -->
 <div class="bg-white h-max rounded-t-xl p-6 mt-6">
   <!-- Header -->
-  <div class="mb-4 border-b-2 border-cyan-500 grid grid-rows-2">
-    <div class="row-span-6 flex justify-end mb-2">Filter</div>
-    <div class="row-span-6 flex justify-start mb-2">Bulletin</div>
+  <div
+    class="mb-4 border-b-2 border-cyan-500 grid grid-rows-2 grid-flow-col"
+    style="height: 90px"
+  >
+    <div
+      class="row-span-2 flex flex-col justify-end mb-2 text-2xl font-bold col-span-1"
+    >
+      <span> Bulletin </span>
+    </div>
+    <div class="row-span-2 flex justify-end mb-2 col-span-1">
+      <app-filter></app-filter>
+    </div>
   </div>
 
   <!-- Body -->
+  <div *ngIf="selectedFilter">
+    <app-posts></app-posts>
+  </div>
   <div class="overflow-y-auto" style="height: 615px">
     <!-- Card -->
     <div class="border-b-2 p-6" *ngFor="let value of cardValue">

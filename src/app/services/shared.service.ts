@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
+  // For action-center-filter
+  private selectedFilterSource = new BehaviorSubject<string>('');
+  selectedFilter$ = this.selectedFilterSource.asObservable();
+
+  changeSelectedFilter(filter: string) {
+    this.selectedFilterSource.next(filter);
+  }
+
+  emptyFilter() {
+    this.selectedFilterSource.next('');
+  }
+
+  // For query data
   private queryData!: { id: number; type: string };
 
   setQueryData(queryData: { id: number; type: string }) {

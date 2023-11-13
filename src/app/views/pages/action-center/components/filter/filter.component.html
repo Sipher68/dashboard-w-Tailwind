@@ -1,1 +1,32 @@
-<p>filter works!</p>
+<!-- Filter container -->
+
+<div class="flex justify-end mb-4">
+  <div
+    class="border rounded-full mx-3 px-5 cursor-pointer"
+    style="background-color: #b7ceda"
+    (click)="onClickFilter()"
+  >
+    <p class="font-bold" style="user-select: none">
+      Filters
+      <img
+        class="inline-block"
+        src="assets/filterIcon.svg"
+        alt="filterimg"
+        style="height: 40px; width: 50px"
+      />
+    </p>
+  </div>
+</div>
+<div
+  class="flex transition-opacity duration-500 ease-in-out"
+  *ngIf="showFilter == true"
+>
+  <div
+    *ngFor="let filterValue of filterValues"
+    class="border rounded-full mx-3 px-5 cursor-pointer text-center"
+    style="background-color: #b7ceda; user-select: none"
+    (click)="onSelectFilterValue(filterValue)"
+  >
+    {{ filterValue }}
+  </div>
+</div>
