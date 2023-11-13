@@ -19,9 +19,12 @@
   <div *ngIf="selectedFilter">
     <app-posts></app-posts>
   </div>
-  <div class="overflow-y-auto" style="height: 615px">
+  <div
+    class="overflow-y-auto"
+    [style.height]="selectedFilter ? 'calc(580px - 120px)' : '580px'"
+  >
     <!-- Card -->
-    <div class="border-b-2 p-6" *ngFor="let value of cardValue">
+    <div class="border-b-2 p-6" *ngFor="let value of cardValue; let i = index">
       <div class="grid grid-cols-12">
         <div class="col-span-2">{{ value["Department"] }}</div>
         <div class="col-span-8">
@@ -30,7 +33,15 @@
           >.
           {{ value["Message"] }}
         </div>
-        <div class="col-span-2">Pin/Unpin</div>
+        <div class="col-span-2 flex justify-end me-5">
+          <fa-icon
+            [icon]="faThumbTack"
+            class="fa-light fa-2xl"
+            style="transform: rotate(45deg); cursor: pointer; color: #bcbcbc"
+            [class.clicked]="isClicked[i]"
+            (click)="toggleClick(i)"
+          ></fa-icon>
+        </div>
       </div>
     </div>
   </div>

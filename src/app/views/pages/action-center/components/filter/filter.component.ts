@@ -12,11 +12,12 @@ import { SharedService } from 'src/app/services/shared.service';
 export class FilterComponent {
   showFilter: boolean = false;
   filterValues: any = ['Memo', 'Violation', 'Payment Dues'];
-  selectedFilter: any = [];
+  selectedFilter!: string;
 
   constructor(private sharedService: SharedService) {}
 
   onClickFilter() {
+    this.sharedService.emptyFilter();
     this.showFilter = !this.showFilter;
   }
 
