@@ -1,5 +1,8 @@
 import { faker } from '@faker-js/faker';
 
+let pao_number = faker.number.int({ min: 1, max: 100 });
+let driver_number = faker.number.int({ min: 1, max: 100 });
+
 function generateOperatorData(count: number) {
   let operators = [];
   for (let i = 1; i <= count; i++) {
@@ -22,7 +25,7 @@ function generatePAOData(count: number) {
     pao.push({
       ID: i,
       ID_Type: 'PAO',
-      Operator_ID: faker.number.int({ min: 1, max: 50 }),
+      Operator_ID: faker.number.int({ min: 1, max: 10 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
       Profile_Picture: faker.image.avatar(),
       License: faker.string.alphanumeric(8),
@@ -42,7 +45,7 @@ function generateDriverData(count: number) {
     drivers.push({
       ID: i,
       ID_Type: 'Driver',
-      Operator_ID: faker.number.int({ min: 1, max: 50 }),
+      Operator_ID: faker.number.int({ min: 1, max: 10 }),
       Name: faker.person.firstName() + ' ' + faker.person.lastName(),
       Profile_Picture: faker.image.avatar(),
       License: faker.string.alphanumeric(8),
@@ -93,7 +96,7 @@ function generateBulletinData(count: number) {
 }
 
 export const data = {
-  Operators: generateOperatorData(faker.number.int({ min: 1, max: 50 })),
+  Operators: generateOperatorData(10),
 
   PAO: generatePAOData(faker.number.int({ min: 1, max: 50 })),
 

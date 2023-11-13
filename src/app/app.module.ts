@@ -4,10 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FilterComponent } from './views/pages/action-center/components/filter/filter.component';
 
 @NgModule({
-  declarations: [AppComponent, FilterComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

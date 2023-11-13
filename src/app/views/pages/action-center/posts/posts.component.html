@@ -1,0 +1,41 @@
+<div>
+  <div
+    class="border rounded-lg cursor-pointer"
+    style="height: 120px"
+    (click)="openWritePostModal()"
+  >
+    <div
+      class="mt-4 border rounded-lg mx-2 flex flex-col justify-center"
+      style="height: 70px; background-color: #ebebeb; user-select: none"
+    >
+      <span class="mx-5"> {{ messageLocation }} </span>
+    </div>
+    <div class="flex justify-between">
+      <div class="mx-7">
+        <span>Add to your post</span>
+      </div>
+      <div class="flex flex-row justify-end mx-7">
+        <fa-icon
+          [icon]="faPaperclip"
+          class="fa-thin fa-flip-horizontal fa-xl ms-3"
+          style="color: #2bc697"
+        ></fa-icon>
+        <fa-icon
+          [icon]="faImage"
+          class="fa-thin fa-flip-horizontal fa-xl ms-3"
+          style="color: #4ba1f7"
+        ></fa-icon>
+        <fa-icon
+          [icon]="faFaceSmile"
+          class="fa-thin fa-xl ms-3"
+          style="color: #e3b765"
+        ></fa-icon>
+      </div>
+    </div>
+    <app-write-post
+      *ngIf="showWritePostModal"
+      [department]="messageLocation"
+      [modalState]="true"
+    ></app-write-post>
+  </div>
+</div>

@@ -12,10 +12,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class WritePostComponent {
   @Input() department!: string;
+  @Input() modalState!: boolean;
 
-  showModal = false;
   toggleModal() {
-    this.showModal = !this.showModal;
+    this.modalState = !this.modalState;
   }
   faPenToSquare = faPenToSquare;
 }

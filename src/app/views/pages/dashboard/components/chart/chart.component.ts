@@ -11,14 +11,21 @@ import { data } from 'src/data/mockdata';
 export class ChartComponent {
   public chart: any;
 
-  public jeepCount = Object.values(data.Operators);
+  public operatorNames = new Array();
+
+  public jeepData = Object.values(data.Operators);
 
   public countArr = new Array();
 
   ngOnInit() {
-    for (let jeep of this.jeepCount) {
+    for (let jeep of this.jeepData) {
       this.countArr.push(jeep['Jeepney_Count']);
     }
+
+    for (let jeep of this.jeepData) {
+      this.operatorNames.push(jeep['Operator_Name']);
+    }
+
     this.createChart();
   }
 
@@ -45,16 +52,7 @@ export class ChartComponent {
             order: 2,
           },
         ],
-        labels: [
-          'Transport 1',
-          'Transport 2',
-          'Transport 3',
-          'Transport 4',
-          'Transport 5',
-          'Transport 6',
-          'Transport 7',
-          'Transport 8',
-        ],
+        labels: this.operatorNames,
       },
 
       options: {

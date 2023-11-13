@@ -1,9 +1,7 @@
-<button type="button" (click)="toggleModal()">
-  <fa-icon [icon]="faPenToSquare" class="fa-2x"></fa-icon>
-</button>
+<button type="button" (click)="toggleModal()"></button>
 
 <div
-  *ngIf="showModal"
+  *ngIf="modalState"
   class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
 >
   <div class="relative w-full max-w-md max-h-full">
@@ -41,7 +39,7 @@
               type="current_email"
               id="current_email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="You are posting in Payment dues"
+              placeholder="You are posting in {{ department }}"
               required
             />
           </div>
@@ -66,4 +64,4 @@
     </div>
   </div>
 </div>
-<div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+<div *ngIf="modalState" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
