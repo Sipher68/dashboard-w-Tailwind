@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { data } from 'src/data/mockdata';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
-import { WritePostComponent } from '../write-post/write-post.component';
 import { PageHeaderComponent } from '../page-header/page-header.component';
 import { SearchComponent } from '../search/search.component';
 import { SharedService } from 'src/app/services/shared.service';
@@ -17,7 +16,6 @@ import { SharedService } from 'src/app/services/shared.service';
     NgFor,
     NgIf,
     ProfileCardComponent,
-    WritePostComponent,
     PageHeaderComponent,
     SearchComponent,
   ],
@@ -109,6 +107,7 @@ export class ReusableTableComponent {
     this.sharedService.clearQueryData();
     // Set query data
     this.sharedService.setQueryData({ id: id, type: id_type });
+    // Navigate to the new route
     this.router.navigate([`/${id_type}/${id}`]);
   }
 }

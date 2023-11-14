@@ -1,0 +1,15 @@
+.input-container {
+  position: relative;
+}
+
+.input-field {
+  padding-left: 75px; /* Adjust based on the size of the icon */
+  background-color: #efefef;
+  border-color: #a4a4a4;
+}
+
+.icon {
+  position: absolute;
+  left: 20px; /* Adjust based on the size of the icon */
+  transform: translateY(-50%);
+}
