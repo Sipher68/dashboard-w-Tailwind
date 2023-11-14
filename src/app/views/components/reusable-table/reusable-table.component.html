@@ -4,7 +4,9 @@
   <!-- Search bar container -->
   <div class="p-5 pb-0">
     <div class="grid grid-cols-12">
-      <div class="col-span-6 border-b-2">Search</div>
+      <div class="col-span-6 border-b-2">
+        <app-search></app-search>
+      </div>
     </div>
   </div>
   <!-- Filter Container -->
@@ -19,7 +21,7 @@
   </div>
   <!-- Table Container -->
 
-  <div class="container min-h-[calc(100vh-140px)]">
+  <div class="container">
     <!-- Headers -->
     <div class="grid grid-cols-7 font-bold text-center mb-0">
       <div class="p-4">Name</div>
@@ -33,7 +35,7 @@
     <!-- Body -->
     <div
       class="container overflow-auto"
-      style="min-height: 600px; max-height: 600px"
+      style="min-height: 560px; max-height: 560px"
     >
       <div
         class="grid grid-cols-7 mb-4 odd:bg-gray-200 even:bg-white text-center cursor-pointer"

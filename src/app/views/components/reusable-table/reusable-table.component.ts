@@ -5,6 +5,7 @@ import { data } from 'src/data/mockdata';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
 import { WritePostComponent } from '../write-post/write-post.component';
 import { PageHeaderComponent } from '../page-header/page-header.component';
+import { SearchComponent } from '../search/search.component';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -18,6 +19,7 @@ import { SharedService } from 'src/app/services/shared.service';
     ProfileCardComponent,
     WritePostComponent,
     PageHeaderComponent,
+    SearchComponent,
   ],
 })
 export class ReusableTableComponent {
@@ -25,6 +27,8 @@ export class ReusableTableComponent {
   public table: any;
 
   public routeID: any;
+
+  public searchValue: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,21 +42,59 @@ export class ReusableTableComponent {
       this.routeID = id;
     });
 
-    // Configure table data based on Operator ID
+    // Configure table data based on Operator ID AND OR searchValue
     if (this.routeID) {
       let operatorName = data.Operators[this.routeID - 1].Operator_Name;
       this.tableName = operatorName;
-      this.table = Object.values(
-        data.PAO.filter((x) => x.Operator_ID == this.routeID - 1)
-      );
+
+      // Subscribe to the search value
+      this.sharedService.searchValue$.subscribe((searchValue) => {
+        this.searchValue = searchValue;
+
+        // If no search value is entered, set table to all PAO and Drivers from the selected Operator
+        // If a search value is entered, set table to the filtered PAO and Drivers from the selected Operator
+        this.table = !this.searchValue
+          ? Object.values(
+              data.PAO.filter((x) => x.Operator_ID == this.routeID - 1)
+            ).concat(
+              data.Drivers.filter((x) => x.Operator_ID == this.routeID - 1)
+            )
+          : Object.values(
+              data.PAO.filter((x) => x.Operator_ID == this.routeID - 1)
+            )
+              .concat(
+                data.Drivers.filter((x) => x.Operator_ID == this.routeID - 1)
+              )
+              .filter((x) =>
+                x.Name.toLowerCase().includes(this.searchValue.toLowerCase())
+              );
+      });
+      // Displays the Drivers and PAO of the selected Operator
     }
 
+    // Switch statement to configure table data based on tableName
+    // If no search value is entered, set table to all PAO and Drivers
+    // If a search value is entered, set table to the filtered PAO and Drivers
     switch (this.tableName) {
       case 'PAO':
-        this.table = Object.values(data.PAO);
+        this.sharedService.searchValue$.subscribe((searchValue) => {
+          this.searchValue = searchValue;
+          this.table = !this.searchValue
+            ? Object.values(data.PAO)
+            : Object.values(data.PAO).filter((x) =>
+                x.Name.toLowerCase().includes(this.searchValue.toLowerCase())
+              );
+        });
         break;
       case 'Drivers':
-        this.table = Object.values(data.Drivers);
+        this.sharedService.searchValue$.subscribe((searchValue) => {
+          this.searchValue = searchValue;
+          this.table = !this.searchValue
+            ? Object.values(data.Drivers)
+            : Object.values(data.Drivers).filter((x) =>
+                x.Name.toLowerCase().includes(this.searchValue.toLowerCase())
+              );
+        });
         break;
       default:
         // Handle the case where tableType is not 'PAO' or 'Drivers'
