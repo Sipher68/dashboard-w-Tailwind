@@ -5,6 +5,19 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class SharedService {
+  // For search service
+  private searchValueSubject: BehaviorSubject<string> =
+    new BehaviorSubject<string>('');
+  searchValue$ = this.searchValueSubject.asObservable();
+
+  setSearchValue(searchValue: string) {
+    this.searchValueSubject.next(searchValue);
+  }
+
+  getSearchValue() {
+    return this.searchValueSubject.getValue();
+  }
+
   // For action-center-filter
   private selectedFilterSource = new BehaviorSubject<string>('');
   selectedFilter$ = this.selectedFilterSource.asObservable();
